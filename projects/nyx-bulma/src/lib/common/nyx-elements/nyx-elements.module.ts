@@ -23,11 +23,22 @@
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NyxBoxComponent } from './nyx-box/nyx-box.component';
+
+const NYX_COMPONENTS = [
+  NyxBoxComponent,
+];
+
+
+
 
 @NgModule({
-  declarations: [],
+  declarations: [...NYX_COMPONENTS],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ...NYX_COMPONENTS
   ]
 })
 export class NyxElementsModule { }

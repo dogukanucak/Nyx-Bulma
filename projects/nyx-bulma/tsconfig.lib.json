@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": "src",
     "outDir": "../../out-tsc/lib",
     "target": "es2015",
     "module": "es2015",
@@ -15,7 +16,10 @@
     "lib": [
       "dom",
       "es2018"
-    ]
+    ],
+    "paths": {
+      "@interfaces/*": ["/lib/common/interfaces/*"]
+    }
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,

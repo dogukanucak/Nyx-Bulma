@@ -27,7 +27,8 @@
               "projects/home/src/assets"
             ],
             "styles": [
-              "projects/home/src/styles.scss"
+              "projects/home/src/styles.scss",
+              "./node_modules/bulma/bulma.sass"
             ],
             "scripts": []
           },

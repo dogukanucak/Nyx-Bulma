@@ -4,13 +4,20 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// Library Modules
+import { NyxElementsModule } from '@nyx-bulma/common';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NyxElementsModule,   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
