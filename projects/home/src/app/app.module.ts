@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Library Modules
-import { NyxElementsModule } from '@nyx-bulma/common';
+import { NyxElementsModule, NyxLayoutModule } from '../../../../projects/nyx-bulma/src/public_api';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { NyxElementsModule } from '@nyx-bulma/common';
     BrowserModule,
     AppRoutingModule,
     NyxElementsModule,   
-    
+    NyxLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
