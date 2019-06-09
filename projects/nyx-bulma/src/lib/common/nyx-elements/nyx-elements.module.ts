@@ -32,11 +32,12 @@ import { NyxImageComponent } from './nyx-image/nyx-image.component';
 import { NyxNotificationComponent } from './nyx-notification/nyx-notification.component';
 import { NyxProgressBarComponent } from './nyx-progress-bar/nyx-progress-bar.component';
 import { NyxTagComponent } from './nyx-tag/nyx-tag.component';
+import { NyxTitleComponent } from './nyx-title/nyx-title.component';
 
 
 const NYX_COMPONENTS = [
   NyxBoxComponent, NyxButtonComponent, NyxContentComponent, NyxDeleteButtonComponent, NyxIconComponent, NyxImageComponent,
-  NyxNotificationComponent, NyxProgressBarComponent, NyxTagComponent
+  NyxNotificationComponent, NyxProgressBarComponent, NyxTagComponent, NyxTitleComponent
 ];
 
 
