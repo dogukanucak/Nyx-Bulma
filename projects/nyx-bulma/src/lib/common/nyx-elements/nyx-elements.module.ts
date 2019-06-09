@@ -13,7 +13,7 @@
 // Nyx-Icon - STATUS: Completed , Requires Test
 // Nyx-Image - STATUS: Completed , Requires Test
 // Nyx-Notification - STATUS: Initially completed, requires more resarch to find better way for toogle (open/close notification)
-// Nyx-Progress-Bar - STATUS: Not Started
+// Nyx-Progress-Bar - STATUS: Requires Test and Review
 // Nyx-Table - STATUS: Not Started
 // Nyx-Tag - STATUS: Not Started
 // Nyx-Title - STATUS: Not Started
@@ -30,11 +30,12 @@ import { NyxDeleteButtonComponent } from './nyx-delete-button/nyx-delete-button.
 import { NyxIconComponent } from './nyx-icon/nyx-icon.component';
 import { NyxImageComponent } from './nyx-image/nyx-image.component';
 import { NyxNotificationComponent } from './nyx-notification/nyx-notification.component';
+import { NyxProgressBarComponent } from './nyx-progress-bar/nyx-progress-bar.component';
 
 
 const NYX_COMPONENTS = [
   NyxBoxComponent, NyxButtonComponent, NyxContentComponent, NyxDeleteButtonComponent, NyxIconComponent, NyxImageComponent,
-  NyxNotificationComponent
+  NyxNotificationComponent, NyxProgressBarComponent
 ];
 
 
