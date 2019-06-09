@@ -11,7 +11,7 @@
 // Nyx-Content - STATUS: Completed , Requires Test
 // Nyx-Delete - STATUS: Completed , Requires Test
 // Nyx-Icon - STATUS: Completed , Requires Test
-// Nyx-Image - STATUS: Not Started
+// Nyx-Image - STATUS: Completed , Requires Test
 // Nyx-Notification - STATUS: Not Started
 // Nyx-Progress-Bar - STATUS: Not Started
 // Nyx-Table - STATUS: Not Started
@@ -28,10 +28,11 @@ import { NyxButtonComponent } from './nyx-button/nyx-button.component';
 import { NyxContentComponent } from './nyx-content/nyx-content.component';
 import { NyxDeleteButtonComponent } from './nyx-delete-button/nyx-delete-button.component';
 import { NyxIconComponent } from './nyx-icon/nyx-icon.component';
+import { NyxImageComponent } from './nyx-image/nyx-image.component';
 
 
 const NYX_COMPONENTS = [
-  NyxBoxComponent, NyxButtonComponent, NyxContentComponent, NyxDeleteButtonComponent, NyxIconComponent
+  NyxBoxComponent, NyxButtonComponent, NyxContentComponent, NyxDeleteButtonComponent, NyxIconComponent, NyxImageComponent
 ];
 
 
