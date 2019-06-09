@@ -10,7 +10,7 @@ import { getColor, getSize } from '../../../utilities/styleHelpers';
   Display empty icon unless an icon class is specified 
 */
 @Component({
-  selector: 'nyx-nyx-icon',
+  selector: 'nyx-icon',
   templateUrl: './nyx-icon.component.html',
   styleUrls: ['./nyx-icon.component.scss']
 })
