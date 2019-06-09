@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
+import { getColor, getSize } from '../../../utilities/styleHelpers';
 
 
 /* 
@@ -16,8 +17,13 @@ import { BaseElement } from '../nyx-base-element';
 export class NyxIconComponent extends BaseElement implements OnInit {
   private readonly emptyIcon = 'fas fa-empty-set';
   protected elementType = 'icon';
+
+  /* Style properties */  
+  @Input() color: string;
+  @Input() size: 'small' | 'normal' | 'medium' | 'large';
   /* Icon class, example: fas fa-home */
   @Input() iconClass: string;
+
   @Output() onClick = new EventEmitter<any>();
   constructor() { 
     super();
@@ -30,7 +36,15 @@ export class NyxIconComponent extends BaseElement implements OnInit {
     this.onClick.emit();
   }
 
-  getClass(): string {
+  getClass(): string  {
+    if(this.bulmaClass) {
+      return super.getClass();
+    } else {
+      return `${this.elementType}${getColor(this.color)}${getSize(this.size)}}`
+    }
+  }
+
+  getIconClass(): string {
     return this.iconClass || this.emptyIcon;
   }
 }
