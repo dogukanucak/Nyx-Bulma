@@ -26,17 +26,16 @@ import { CommonModule } from '@angular/common';
 import { NyxBoxComponent } from './nyx-box/nyx-box.component';
 import { NyxButtonComponent } from './nyx-button/nyx-button.component';
 import { NyxContentComponent } from './nyx-content/nyx-content.component';
+import { NyxDeleteButtonComponent } from './nyx-delete-button/nyx-delete-button.component';
 
 
 const NYX_COMPONENTS = [
-  NyxBoxComponent, NyxButtonComponent
+  NyxBoxComponent, NyxButtonComponent, NyxContentComponent, NyxDeleteButtonComponent
 ];
 
 
-
-
 @NgModule({
-  declarations: [...NYX_COMPONENTS, NyxContentComponent],
+  declarations: [...NYX_COMPONENTS],
   imports: [
     CommonModule
   ],
