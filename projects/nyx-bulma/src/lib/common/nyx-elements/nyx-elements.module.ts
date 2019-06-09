@@ -16,7 +16,7 @@
 // Nyx-Progress-Bar - STATUS: Requires Test and Review
 // Nyx-Table - STATUS: Not Started
 // Nyx-Tag - STATUS: Completed , Requires Test
-// Nyx-Title - STATUS: Not Started
+// Nyx-Title - STATUS: Completed , Requires Test
 // ----------------------------------------------------------------------------------------
 
 
