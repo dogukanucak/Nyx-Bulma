@@ -1,6 +1,6 @@
-{
-  "extends": "../../tsconfig.json",
+{  
   "compilerOptions": {
+    "extends": "../../tsconfig.json",
     "baseUrl": "src",
     "outDir": "../../out-tsc/lib",
     "target": "es2015",
@@ -18,7 +18,8 @@
       "es2018"
     ],
     "paths": {
-      "@interfaces/*": ["/lib/common/interfaces/*"]
+      "@interfaces/*": ["/lib/common/interfaces/*"],
+      "@common/elements/*": ["/lib/common/nyx-elements/*"]
     }
   },
   "angularCompilerOptions": {

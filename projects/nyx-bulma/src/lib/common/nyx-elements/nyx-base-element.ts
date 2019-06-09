@@ -1,14 +1,9 @@
 import { Input } from "@angular/core";
 
-export class BaseElement {
-    protected baseClass: string;
-    
-    // Inputs
-    @Input("nyx-class") externalClass: string;
-
+export abstract class BaseElement {   
+    protected elementType: string; 
+    @Input() bulmaClass: string;   
     getClass(): string {
-        return `${this.baseClass} ${this.externalClass}`;
+        return `${this.elementType} ${this.bulmaClass}}`
     }
-
-
 }

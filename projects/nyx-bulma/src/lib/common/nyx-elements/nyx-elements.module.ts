@@ -24,9 +24,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NyxBoxComponent } from './nyx-box/nyx-box.component';
+import { NyxButtonComponent } from './nyx-button/nyx-button.component';
+
 
 const NYX_COMPONENTS = [
-  NyxBoxComponent,
+  NyxBoxComponent, NyxButtonComponent
 ];
 
 
