@@ -14,7 +14,6 @@ export class NyxButtonComponent extends BaseElement implements OnInit {
   @Input() size: 'small' | 'normal' | 'medium' | 'large';
   @Input() display: 'fullwidth';
   @Input() outlined: boolean;
-  @Input() disabled: boolean;
 
   @Output() onClick = new EventEmitter<any>();
 
@@ -39,18 +38,4 @@ export class NyxButtonComponent extends BaseElement implements OnInit {
       return `${this.elementType}${getColor(this.color)}${getSize(this.size)}${getDisplay(this.display)}${getOutlined(this.outlined)}`
     }
   }
-
-  private getColor(): string {
-    return (this.color) ? ` is-${this.color}` : '';
-  }
-  private getSize(): string {
-    return (this.size) ? ` is-${this.size}` : '';
-  }
-  private getDisplay(): string {
-    return (this.display) ? ` is-${this.display}` : '';
-  }
-  private getOutlined(): string {
-    return (this.outlined) ? ` is-outlined` : '';
-  }
-
 }
