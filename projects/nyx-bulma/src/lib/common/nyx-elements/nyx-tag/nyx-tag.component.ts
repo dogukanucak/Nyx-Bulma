@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getColor, getSize } from '../../../utilities/styleHelpers';
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 /* 
   Nyx Tag Component
@@ -15,10 +15,10 @@ import { getColor, getSize } from '../../../utilities/styleHelpers';
 })
 export class NyxTagComponent extends BaseElement implements OnInit {
   protected elementType = 'tag';
-  @Input() text: string;
-  @Input() color: string;
-  @Input() size: string;
-  @Input() isRounded: boolean;
+  @Input() @Bulma() color: string;
+  @Input() @Bulma() size: string;
+  @Input() @Bulma() rounded: boolean;
+  @Input() text: string;  
   constructor() { 
     super();
   }
@@ -30,11 +30,7 @@ export class NyxTagComponent extends BaseElement implements OnInit {
     if(this.bulmaClass) {
       return super.getClass();
     } else {
-      let tagClass = `${this.elementType}${getColor(this.color)}${getSize(this.size)}`;
-      if(this.isRounded) {
-        tagClass = `${tagClass} is-rounded`;
-      }
-      return tagClass;
+       return `${this.elementType}${this.color}${this.size}${this.rounded}`;      
     }
   }
 

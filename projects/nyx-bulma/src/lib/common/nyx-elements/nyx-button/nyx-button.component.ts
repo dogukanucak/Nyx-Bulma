@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getColor, getSize, getDisplay, getOutlined } from '../../../utilities/styleHelpers';
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 @Component({
   selector: 'nyx-nyx-button',
@@ -10,10 +10,10 @@ import { getColor, getSize, getDisplay, getOutlined } from '../../../utilities/s
 export class NyxButtonComponent extends BaseElement implements OnInit {
   protected elementType = "button";
   /* Style properties */  
-  @Input() color: string;
-  @Input() size: 'small' | 'normal' | 'medium' | 'large';
-  @Input() display: 'fullwidth';
-  @Input() outlined: boolean;
+  @Input() @Bulma() color: string;
+  @Input() @Bulma() size: 'small' | 'normal' | 'medium' | 'large';
+  @Input() @Bulma() display: 'fullwidth';
+  @Input() @Bulma() outlined: boolean;
 
   @Output() onClick = new EventEmitter<any>();
 
@@ -35,7 +35,7 @@ export class NyxButtonComponent extends BaseElement implements OnInit {
       return super.getClass();
     } else {
       /* Concatenate style properties */
-      return `${this.elementType}${getColor(this.color)}${getSize(this.size)}${getDisplay(this.display)}${getOutlined(this.outlined)}`
+      return `${this.elementType}${this.color}${this.size}${this.display}${this.outlined}`;
     }
   }
 }

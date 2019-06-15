@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getSize } from '../../../utilities/styleHelpers';
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 @Component({
   selector: 'nyx-content',
@@ -9,7 +9,7 @@ import { getSize } from '../../../utilities/styleHelpers';
 })
 export class NyxContentComponent extends BaseElement implements OnInit {
   protected elementType = "content";  
-  @Input() size: 'small' | 'normal' | 'medium' | 'large';
+  @Input() @Bulma() size: 'small' | 'normal' | 'medium' | 'large';
 
   constructor() {
     super();
@@ -21,7 +21,7 @@ export class NyxContentComponent extends BaseElement implements OnInit {
     if(this.bulmaClass) {
       return super.getClass();
     } else {
-      return `${this.elementType}${getSize(this.size)}`
+      return `${this.elementType}${this.size}`
     }
   }
 }

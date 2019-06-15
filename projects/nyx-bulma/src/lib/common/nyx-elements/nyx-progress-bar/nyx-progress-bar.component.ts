@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { BaseElement } from "../nyx-base-element";
-import { getColor, getSize } from "../../../utilities/styleHelpers";
 import { getPercentage } from "../../../utilities/calculators";
+import { Bulma } from "../../../decorators/bulma.decorator";
 
 interface ProgressBarChangeEvent {
   value: number;
@@ -24,9 +24,9 @@ export class NyxProgressBarComponent extends BaseElement implements OnInit {
   private readonly MISSING_VALUE_WARNING = 'Value has not been set. Indeterminate progress bar will be used';
   private _value: number;
   protected elementType = "progress";
-  @Input() color: string;
-  @Input() size: string;
-  @Input() max: number;
+  @Input() @Bulma() color: string;
+  @Input() @Bulma() size: string;
+  @Input()  max: number;
 
   get value(): number {
     return this._value;
@@ -58,7 +58,7 @@ export class NyxProgressBarComponent extends BaseElement implements OnInit {
     if (this.bulmaClass) {
       return super.getClass();
     } else {
-      return `${this.elementType}${getColor(this.color)}${getSize(this.size)}`;
+      return `${this.elementType}${this.color}${this.size}`;
     }
   }
 }

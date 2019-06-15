@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getColor } from '../../../utilities/styleHelpers';
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 /* 
   Nyx Notification Container Component
@@ -18,7 +18,7 @@ import { getColor } from '../../../utilities/styleHelpers';
 export class NyxNotificationComponent extends BaseElement implements OnInit {
   protected elementType = 'notification';
   isEnabled = true;
-  @Input() type: string;
+  @Input() @Bulma() type: string;
   @Output() onClose = new EventEmitter<any>();
   constructor() { 
     super();
@@ -35,7 +35,7 @@ export class NyxNotificationComponent extends BaseElement implements OnInit {
   }
 
   getClass(): string {
-    return this.bulmaClass || `${this.elementType}${getColor(this.type)}`;
+    return this.bulmaClass || `${this.elementType}${this.type}`;
   }
 
 }

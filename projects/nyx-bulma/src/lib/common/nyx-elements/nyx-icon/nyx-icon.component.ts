@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getColor, getSize } from '../../../utilities/styleHelpers';
-
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 /* 
   Nyx Icon Component
@@ -19,8 +18,8 @@ export class NyxIconComponent extends BaseElement implements OnInit {
   protected elementType = 'icon';
 
   /* Style properties */  
-  @Input() color: string;
-  @Input() size: 'small' | 'normal' | 'medium' | 'large';
+  @Input() @Bulma() color: string;
+  @Input() @Bulma() size: 'small' | 'normal' | 'medium' | 'large';
   /* Icon class, example: fas fa-home */
   @Input() iconClass: string;
 
@@ -40,7 +39,7 @@ export class NyxIconComponent extends BaseElement implements OnInit {
     if(this.bulmaClass) {
       return super.getClass();
     } else {
-      return `${this.elementType}${getColor(this.color)}${getSize(this.size)}}`
+      return `${this.elementType}${this.color}${this.size}}`
     }
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getSize } from '../../../utilities/styleHelpers';
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 declare type TitleFormat = 'title' | 'subtitle';
 declare type TitleSize = '1' | '2' | '3' | '4' | '5' | '6';
@@ -17,10 +17,10 @@ declare type TitleSize = '1' | '2' | '3' | '4' | '5' | '6';
   styleUrls: ['./nyx-title.component.scss']
 })
 export class NyxTitleComponent extends BaseElement implements OnInit {  
-  @Input() titleType: TitleFormat = 'title';
-  @Input() size: TitleSize;
+  @Input() @Bulma() size: TitleSize;  
+  @Input() @Bulma() spaced: boolean;
+  @Input() titleType: TitleFormat = 'title';  
   @Input() text: string;
-  @Input() isSpaced: boolean;
   constructor() { 
     super();
   }
@@ -33,11 +33,7 @@ export class NyxTitleComponent extends BaseElement implements OnInit {
     if(this.bulmaClass) {
       return super.getClass();
     } else {
-      let titleClass = `${this.titleType}${getSize(this.size)}`;
-      if(this.isSpaced) {
-        titleClass = `${titleClass} is-spaced`
-      }
-      return titleClass;
+      return `${this.titleType}${this.size}${this.spaced}`;      
     }
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { getSize } from '../../../utilities/styleHelpers';
+import { Bulma } from '../../../decorators/bulma.decorator';
 
 /* 
   Nyx Image Component
@@ -14,8 +15,8 @@ import { getSize } from '../../../utilities/styleHelpers';
 })
 export class NyxImageComponent extends BaseElement implements OnInit {
   protected elementType = "image";
-  @Input() dimension: string;
-  @Input() isRounded: boolean;
+  @Input() @Bulma() dimension: string;
+  @Input() @Bulma() rounded: boolean;
   constructor() {
     super();
    }
@@ -24,7 +25,7 @@ export class NyxImageComponent extends BaseElement implements OnInit {
   }  
   
   getImageClass(): string {
-    return (this.isRounded) ? 'is-rounded' : ''; 
+    return `${this.rounded}`;
   }
 
   getClass(): string {
