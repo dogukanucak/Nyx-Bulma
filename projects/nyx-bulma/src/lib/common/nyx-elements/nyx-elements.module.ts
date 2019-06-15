@@ -15,7 +15,7 @@
 // Nyx-Notification - STATUS: Initially completed, requires more resarch to find better way for toogle (open/close notification)
 // Nyx-Progress-Bar - STATUS: Requires Test and Review
 // Nyx-Table - STATUS: Not Started
-// Nyx-Tag - STATUS: Completed , Requires Test
+// Nyx-Tag - STATUS: Completed
 // Nyx-Title - STATUS: Completed , Requires Test
 // ----------------------------------------------------------------------------------------
 

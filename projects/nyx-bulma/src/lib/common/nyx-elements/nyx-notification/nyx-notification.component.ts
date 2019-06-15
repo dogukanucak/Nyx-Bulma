@@ -27,7 +27,7 @@ export class NyxNotificationComponent extends BaseElement implements OnInit {
   ngOnInit() {
   }
 
-  onNotificationClose(): void {
+  closeNotification(): void {
     // Set component content to invisible, may need to find a better way to remove notification
     // https://stackoverflow.com/questions/42884215/can-a-component-remove-its-own-template-and-put-it-back-conditionally/42988591
     this.isEnabled = false;

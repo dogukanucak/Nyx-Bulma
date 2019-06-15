@@ -3,7 +3,7 @@ import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
 @Component({
-  selector: 'nyx-nyx-button',
+  selector: 'nyx-button',
   templateUrl: './nyx-button.component.html',
   styleUrls: ['./nyx-button.component.scss']
 })
@@ -14,6 +14,9 @@ export class NyxButtonComponent extends BaseElement implements OnInit {
   @Input() @Bulma() size: 'small' | 'normal' | 'medium' | 'large';
   @Input() @Bulma() display: 'fullwidth';
   @Input() @Bulma() outlined: boolean;
+  @Input() @Bulma() rounded: boolean;
+
+  @Input() text: string;
 
   @Output() onClick = new EventEmitter<any>();
 
@@ -35,7 +38,8 @@ export class NyxButtonComponent extends BaseElement implements OnInit {
       return super.getClass();
     } else {
       /* Concatenate style properties */
-      return `${this.elementType}${this.color}${this.size}${this.display}${this.outlined}`;
+     console.log("Generated class => ",  `${this.elementType}${this.color}${this.size}${this.display}${this.outlined}${this.rounded}` );
+     return `${this.elementType}${this.color}${this.size}${this.display}${this.outlined}${this.rounded}`;
     }
   }
 }

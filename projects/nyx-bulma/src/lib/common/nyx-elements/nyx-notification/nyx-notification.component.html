@@ -1,6 +1,6 @@
 <div *ngIf="isEnabled" [class]="getClass()">
   <!-- Try replacing the button with nyx-delete-button after tests succeed -->
-  <button class="delete" (click)="onNotificationClose()"></button>
+  <button class="delete" (click)="closeNotification()"></button>
   <ng-content></ng-content>
 </div>
 

@@ -1,16 +1,19 @@
-export function Bulma() {
-    return (target: Object, key: string) => {
+var counter = 0;
+export function Bulma() { 
+    return (target: Object, key: string) => {       
         // property value
-        let _val = target[key];
+        let _val = target[key] || "";
 
         // property getter method
-        const getter = () => {            
+        const getter = () => {               
             return _val;
         };
 
         // property setter method
-        const setter = newVal => {                      
-            _val = (typeof newVal == 'boolean') ? convertToBulma(key) : convertToBulma(newVal);
+        const setter = newVal => {  
+            console.log("Target => ", target);
+            console.log("Value: ", target[key]);             
+            _val = (typeof newVal === 'boolean' || newVal === 'true' || newVal === 'false' ) ? convertToBulma(key) : convertToBulma(newVal);
         };
 
         // Delete property.
@@ -23,9 +26,10 @@ export function Bulma() {
                 configurable: true
             });
         }
-    }
+    }    
 }
 
 const convertToBulma = (value: string): string => {
+    console.warn("Converted value: ", value);
     return value ? ` is-${value}` : "";
 }

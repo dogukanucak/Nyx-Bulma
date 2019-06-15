@@ -1,21 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Library Modules
 import { NyxElementsModule, NyxLayoutModule } from '../../../../projects/nyx-bulma/src/public_api';
+import { ElementsComponent } from './pages/elements/elements.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    ElementsComponent,
     
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+    BrowserModule,    
     NyxElementsModule,   
     NyxLayoutModule
   ],
