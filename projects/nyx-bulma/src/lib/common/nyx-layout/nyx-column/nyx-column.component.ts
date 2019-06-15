@@ -1,7 +1,9 @@
 import { Component, OnInit, Host, Optional, SkipSelf, Input, ElementRef, HostBinding } from '@angular/core';
-import { NyxColumnsComponent } from 'projects/nyx-bulma/src/lib/common/nyx-layout/nyx-columns/nyx-columns.component';
-import { BaseLayout } from 'projects/nyx-bulma/src/lib/common/nyx-layout/nyx-base-layout';
+
+import { BaseLayout } from '../nyx-base-layout';
 import { isString } from 'util';
+import { NyxColumnsComponent } from '../nyx-columns/nyx-columns.component';
+
 
 @Component({
   selector: 'nyx-column',

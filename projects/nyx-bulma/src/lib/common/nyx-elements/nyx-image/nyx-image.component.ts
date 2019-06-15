@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
-import { getSize } from '../../../utilities/styleHelpers';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
 /* 
@@ -32,7 +31,7 @@ export class NyxImageComponent extends BaseElement implements OnInit {
     if(this.bulmaClass) {
       return super.getClass();
     } else {
-      return `${this.elementType}${getSize(this.dimension)}`
+      return `${this.elementType}${this.dimension}`
     }
   }
 

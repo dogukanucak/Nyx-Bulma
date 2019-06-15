@@ -1,6 +1,7 @@
 import { Component, OnInit, SkipSelf, Host, Optional, ElementRef } from '@angular/core';
-import { BaseLayout } from 'projects/nyx-bulma/src/lib/common/nyx-layout/nyx-base-layout';
-import { NyxLevelComponent } from 'projects/nyx-bulma/src/lib/common/nyx-layout/nyx-level/nyx-level.component';
+import { BaseLayout } from '../nyx-base-layout';
+import { NyxLevelComponent } from '../nyx-level/nyx-level.component';
+
 
 @Component({
   selector: 'nyx-level-left',

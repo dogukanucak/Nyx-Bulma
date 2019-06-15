@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BaseLayout } from 'projects/nyx-bulma/src/lib/common/nyx-layout/nyx-base-layout';
+import { BaseLayout } from '../nyx-base-layout';
+
 
 @Component({
   selector: 'nyx-container',
