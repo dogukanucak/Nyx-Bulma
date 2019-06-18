@@ -1,32 +1,33 @@
-var counter = 0;
-export function Bulma() { 
-    return (target: Object, key: string) => {       
-        // property value
-        let _val = target[key] || "";
+import { BehaviorSubject } from "rxjs";
 
-        // property getter method
-        const getter = () => {               
-            return _val;
-        };
+export function Bulma(defaultValue: string = "") {
+    return (target: Object, key: string) => {
+        const accessor = `${key}$`;
+        const secret = `_${key}$`;
 
-        // property setter method
-        const setter = newVal => {  
-            console.log("Target => ", target);
-            console.log("Value: ", target[key]);             
-            _val = (typeof newVal === 'boolean' || newVal === 'true' || newVal === 'false' ) ? convertToBulma(key) : convertToBulma(newVal);
-        };
-
-        // Delete property.
-        if (delete target[key]) {
-            // Create new property with getter and setter
-            Object.defineProperty(target, key, {
-                get: getter,
-                set: setter,
-                enumerable: true,
-                configurable: true
-            });
-        }
-    }    
+        Object.defineProperty(target, accessor, {
+            get: function () {
+                if (this[secret]) {
+                    return this[secret];
+                }
+                this[secret] = new BehaviorSubject(defaultValue);
+                return this[secret];
+            },
+            set: function () {
+                throw new Error('You cannot set this property in the Component if you use @ObservableProperty');
+            }
+        });
+        Object.defineProperty(target, key, {
+            get: function () {
+                return this[accessor].getValue();
+            },
+            set: function (value: any) {
+                this[accessor].next((typeof value === 'boolean' || value === 'true' || value === 'false') ? convertToBulma(key) : convertToBulma(value));
+            },
+            enumerable: true,
+            configurable: true
+        });
+    }
 }
 
 const convertToBulma = (value: string): string => {
