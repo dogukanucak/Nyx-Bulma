@@ -30,7 +30,6 @@ export function Bulma(defaultValue: string = "") {
     }
 }
 
-const convertToBulma = (value: string): string => {
-    console.warn("Converted value: ", value);
+const convertToBulma = (value: string): string => {    
     return value ? ` is-${value}` : "";
 }
