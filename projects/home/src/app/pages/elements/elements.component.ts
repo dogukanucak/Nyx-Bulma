@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NyxModalPopUpService } from 'projects/nyx-bulma/src/public_api';
 
 @Component({
   selector: 'home-elements',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElementsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NyxModalPopUpService) { }
 
   ngOnInit() {
   }
 
+  // Modal Pop Up Test Button Click
+  openPopUp(): void {
+    this.modalService.NotifyModalPopUp({isActive: true})
+  }
+  closePopUp(): void {
+    this.modalService.NotifyModalPopUp({isActive: false});
+  }
 }

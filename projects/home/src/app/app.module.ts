@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Library Modules
-import { NyxElementsModule, NyxLayoutModule } from '../../../../projects/nyx-bulma/src/public_api';
+import { NyxElementsModule, NyxLayoutModule, NyxModalPopUpModule } from '../../../../projects/nyx-bulma/src/public_api';
 import { ElementsComponent } from './pages/elements/elements.component';
 
 
@@ -16,7 +16,8 @@ import { ElementsComponent } from './pages/elements/elements.component';
   imports: [
     BrowserModule,    
     NyxElementsModule,   
-    NyxLayoutModule
+    NyxLayoutModule,
+    NyxModalPopUpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
