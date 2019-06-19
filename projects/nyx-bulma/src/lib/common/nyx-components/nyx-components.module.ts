@@ -1,15 +1,17 @@
+// Nyx-Bulma Components Module
+// Contributers: @Doğukan UÇAK , @Deniz Yamaç
+// Bulma Common Components - https://bulma.io/documentation/components
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NyxModalPopupComponent } from './nyx-modalpopup/nyx-modalpopup.component';
 
-const NYX_COMPONENTS = [
-  NyxModalPopupComponent
-];
+
 
 @NgModule({
-  declarations: [...NYX_COMPONENTS],
+  declarations: [],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+  ],
+  providers: []
 })
 export class NyxComponentsModule { }

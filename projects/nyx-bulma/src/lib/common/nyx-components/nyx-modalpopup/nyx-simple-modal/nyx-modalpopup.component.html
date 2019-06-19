@@ -1,0 +1,7 @@
+<div class="modal" [ngClass]="isOpen ? 'is-active' : ''" >
+  <div class="modal-background"></div>
+  <div class="modal-content">
+      <ng-content></ng-content>
+  </div>     
+  <ng-content select="[footer]"></ng-content>
+</div>
