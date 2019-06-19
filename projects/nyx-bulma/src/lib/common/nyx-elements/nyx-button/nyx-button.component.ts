@@ -37,8 +37,7 @@ export class NyxButtonComponent extends BaseElement implements OnInit {
     if (this.bulmaClass) {
       return super.getClass();
     } else {
-      /* Concatenate style properties */
-     console.log("Generated class => ",  `${this.elementType}${this.color}${this.size}${this.display}${this.outlined}${this.rounded}` );
+      /* Concatenate style properties */     
      return `${this.elementType}${this.color}${this.size}${this.display}${this.outlined}${this.rounded}`;
     }
   }
