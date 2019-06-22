@@ -2,6 +2,16 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
+/**
+* Delete button based on Bulma Box Element: {@link https://bulma.io/documentation/elements/delete/}* 
+* @example 
+* Example Nyx-Delete-Button Usage:
+* ```
+* <nyx-delete-button size="large"></nyx-delete-button>
+* ```
+*
+*/
+
 @Component({
   selector: 'nyx-delete-button',
   templateUrl: './nyx-delete-button.component.html',

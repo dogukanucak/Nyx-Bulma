@@ -5,10 +5,11 @@ import { Bulma } from '../../../decorators/bulma.decorator';
 declare type TitleFormat = 'title' | 'subtitle';
 declare type TitleSize = '1' | '2' | '3' | '4' | '5' | '6';
 
-/* 
-  Nyx Title Component
-  Based on: https://bulma.io/documentation/elements/title/
-  Usage Example: <nyx-title size='3' text='Example Title'></nyx-title>
+/** 
+*  Nyx Title Component
+*  Based on: {@link https://bulma.io/documentation/elements/title/}
+*  @example
+*  Usage Example: ```<nyx-title size='3' text='Example Title'></nyx-title>```
 */
 
 @Component({

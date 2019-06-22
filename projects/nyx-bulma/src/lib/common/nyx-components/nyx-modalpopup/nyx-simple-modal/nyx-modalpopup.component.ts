@@ -1,5 +1,6 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { NyxModalPopUpService } from '../nyx-modal-pop-up.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -7,7 +8,8 @@ import { NyxModalPopUpService } from '../nyx-modal-pop-up.service';
   templateUrl: './nyx-modalpopup.component.html',
   styleUrls: ['./nyx-modalpopup.component.scss']
 })
-export class NyxModalPopupComponent implements OnInit {
+export class NyxModalPopupComponent implements OnInit, OnDestroy {  
+  private modalPopUpSubscription: Subscription;
   protected isOpen = false;
   
   @Output() onModalPopUpOpen = new EventEmitter<void>();
@@ -18,9 +20,13 @@ export class NyxModalPopupComponent implements OnInit {
 
   ngOnInit() {
     // Listen for modal pop up subject updates
-    this.modalService.ModalPopUpSubject$.subscribe(options => {
+    this.modalPopUpSubscription = this.modalService.ModalPopUpSubject$.subscribe(options => {
       this.updateStatus(options.isActive);
     });
+  }
+
+  ngOnDestroy(): void {
+    this.modalPopUpSubscription.unsubscribe();
   }
 
   protected updateStatus(isActive: boolean): void {

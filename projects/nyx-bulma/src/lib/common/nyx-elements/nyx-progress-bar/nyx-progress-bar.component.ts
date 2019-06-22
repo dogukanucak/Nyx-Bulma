@@ -8,10 +8,11 @@ interface ProgressBarChangeEvent {
   percentage: number;  
 }
 
-/* 
-  Nyx Progress Bar Component
-  Based on: https://bulma.io/documentation/elements/progress/ 
-  Usage Example: <nyx-progress-bar color='primary' size='normal' [value]='getValue()' max=100></nyx-progress-bar>
+/**
+*  Nyx Progress Bar Component
+*  Based on: {@link https://bulma.io/documentation/elements/progress/} 
+*  @example
+*  Usage Example: ```<nyx-progress-bar color='primary' size='normal' [value]='getValue()' max=100></nyx-progress-bar>```
 */
 
 @Component({

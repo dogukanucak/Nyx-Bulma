@@ -2,10 +2,11 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
-/* 
-  Nyx Tag Component
-  Based on: https://bulma.io/documentation/elements/tag/
-  Usage Example: <nyx-tag text='Hello' color='success' size='medium'></nyx-tag>
+/**  
+*  Nyx Tag Component
+*  Based on: {@link https://bulma.io/documentation/elements/tag/}
+*  @example
+*  Usage Example: ```<nyx-tag text='Hello' color='success' size='medium'></nyx-tag>```
 */
 
 @Component({

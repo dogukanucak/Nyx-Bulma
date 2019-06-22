@@ -2,12 +2,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
-/* 
-  Nyx Notification Container Component
-  Based on: https://bulma.io/documentation/elements/notification/ 
-  Usage: <nyx-notification type='primary'>
-            <!-- Any Content Inside -->
-         </nyx-notification> 
+/** 
+*  Nyx Notification Container Component
+*  Based on: {@link https://bulma.io/documentation/elements/notification/} 
+*  @example
+*  Usage:
+*  ```
+*      <nyx-notification type='primary'>
+*            <!-- Any Content Inside -->
+*       </nyx-notification> 
+*  ```
 */
 
 @Component({

@@ -2,12 +2,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
-/* 
-  Nyx Icon Component
-  Based On: https://bulma.io/documentation/elements/icon/
-  Supports Font Awesome classes through Bulma Framework
-  Display empty icon unless an icon class is specified 
+/**
+* Icon element based on Bulma Box Element: {@link https://bulma.io/documentation/elements/icon/}
+* Supports Font Awesome classes through Bulma Framework
+* Display empty icon unless an icon class is specified 
+* @example 
+* Example Nyx-Icon Usage:
+* ```
+* <nyx-icon color="primary" size="large" iconClass="fas fa-clock"></nyx-icon>
+* ```
 */
+
 @Component({
   selector: 'nyx-icon',
   templateUrl: './nyx-icon.component.html',
@@ -20,7 +25,7 @@ export class NyxIconComponent extends BaseElement implements OnInit {
   /* Style properties */  
   @Input() @Bulma() color: string;
   @Input() @Bulma() size: 'small' | 'normal' | 'medium' | 'large';
-  /* Icon class, example: fas fa-home */
+  /** Icon class, @example: fas fa-home */
   @Input() iconClass: string;
 
   @Output() onClick = new EventEmitter<any>();

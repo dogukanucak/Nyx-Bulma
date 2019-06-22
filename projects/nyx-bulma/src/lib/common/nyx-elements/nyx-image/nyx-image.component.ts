@@ -2,9 +2,15 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
-/* 
-  Nyx Image Component
-  Based On: https://bulma.io/documentation/elements/image/ 
+/**
+* Image component based on Bulma Image Element: {@link https://bulma.io/documentation/elements/image/}
+* 
+* @example 
+* Example Nyx-Image Usage:
+* ```
+* <nyx-image dimension="16x16" rounded="true"></nyx-image>
+* ```
+*
 */
 
 @Component({

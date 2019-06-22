@@ -1,23 +1,3 @@
-// Nyx-Bulma Elements Module
-// Contributers: @Doğukan UÇAK , @Deniz Yamaç
-
-// Bulma Common Elements - https://bulma.io/documentation/elements/
-
-
-// -------- Development Progress ---------------------------------------------------------
-// Nyx-TextBox - STATUS: Not Started , Exclusive
-// Nyx-Box - STATUS: Completed , Requires Test
-// Nyx-Button - STATUS: Completed , Requires Test
-// Nyx-Content - STATUS: Completed , Requires Test
-// Nyx-Delete - STATUS: Completed , Requires Test
-// Nyx-Icon - STATUS: Completed , Requires Test
-// Nyx-Image - STATUS: Completed , Requires Test
-// Nyx-Notification - STATUS: Initially completed, requires more resarch to find better way for toogle (open/close notification)
-// Nyx-Progress-Bar - STATUS: Requires Test and Review
-// Nyx-Table - STATUS: Not Started
-// Nyx-Tag - STATUS: Completed
-// Nyx-Title - STATUS: Completed , Requires Test
-// ----------------------------------------------------------------------------------------
 
 
 

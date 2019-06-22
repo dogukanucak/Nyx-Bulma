@@ -2,6 +2,16 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { BaseElement } from '../nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
+/**
+* Button Component based on Bulma Button Element: {@link https://bulma.io/documentation/elements/button/}* 
+* @example 
+* Example Nyx-Button Usage:
+* ```
+*  <nyx-button text="Open" (onClick)="openPopUp()" color="primary"></nyx-button>
+* ```
+*
+*/
+
 @Component({
   selector: 'nyx-button',
   templateUrl: './nyx-button.component.html',
