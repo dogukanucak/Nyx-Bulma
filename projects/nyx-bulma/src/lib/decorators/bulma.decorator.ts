@@ -9,7 +9,7 @@ import { BehaviorSubject } from "rxjs";
  *  If the value is a boolean type, decorator will use property key rather than its value!
  */
 
-export function Bulma(defaultValue: string = "", modifierType: string = "is") {
+export function Bulma(modifierType: string = "is", useValue?: string, postFix?: string) {
     return (target: Object, key: string) => {
         const accessor = `${key}$`;
         const secret = `_${key}$`;
@@ -19,7 +19,7 @@ export function Bulma(defaultValue: string = "", modifierType: string = "is") {
                 if (this[secret]) {
                     return this[secret];
                 }
-                this[secret] = new BehaviorSubject(defaultValue);
+                this[secret] = new BehaviorSubject("");
                 return this[secret];
             },
             set: function () {
@@ -31,7 +31,7 @@ export function Bulma(defaultValue: string = "", modifierType: string = "is") {
                 return this[accessor].getValue();
             },
             set: function (value: any) {
-                this[accessor].next((typeof value === 'boolean' || value === 'true' || value === 'false') ? convertToBulma(key,modifierType) : convertToBulma(value,modifierType));
+                this[accessor].next(((typeof value === 'boolean' && value) || value === 'true') ? convertToBulma(useValue ? useValue : key, modifierType, postFix) : convertToBulma(value, modifierType, postFix));
             },
             enumerable: true,
             configurable: true
@@ -39,6 +39,6 @@ export function Bulma(defaultValue: string = "", modifierType: string = "is") {
     }
 }
 
-const convertToBulma = (value: string, modifierType: string): string => {    
-    return value ? ` ${modifierType}-${value}` : "";
+const convertToBulma = (value: string, modifierType: string, postFix?: string): string => {
+    return (typeof value === 'boolean' && !value) || value != 'false' ? ` ${modifierType}-${value}${postFix ? '-' + postFix : ''}` : '';
 }

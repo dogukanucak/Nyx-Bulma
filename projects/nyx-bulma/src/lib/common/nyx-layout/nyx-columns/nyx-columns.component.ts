@@ -41,8 +41,7 @@ export class NyxColumnsComponent extends BaseLayout implements OnInit {
     if (this.isWideScreen) cls += " is-" + this.isWideScreen + "-widescreen";
     if (this.isFullHd) cls += " is-" + this.isFullHd + "-fullhd";
 
-    this.externalClass= this.externalClass ? ' '+this.externalClass: '';
 
-    return `${this.baseClass}${this.is ? ' is-variable is-' + this.is : ''}${this.isGapless ? ' is-gapless' : ''}${this.isMultiLine ? ' is-multiline' : ''}${cls}${this.isVerticalCentered ? ' is-vcentered' : ''}${this.isCentered ? ' is-centered' : ''}${this.externalClass}`;
+    return `${this.baseClass}${this.is ? ' is-variable is-' + this.is : ''}${this.isGapless ? ' is-gapless' : ''}${this.isMultiLine ? ' is-multiline' : ''}${cls}${this.isVerticalCentered ? ' is-vcentered' : ''}${this.isCentered ? ' is-centered' : ''}`;
   }
 }
