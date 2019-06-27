@@ -1,26 +1,35 @@
 import { BehaviorSubject } from 'rxjs';
+import { isArray } from 'util';
+import { convertToBulma } from 'projects/nyx-bulma/src/lib/decorators/bulma.decorator';
 
-export const convertToBulma = (
-  value: any,
+const convertToBulmaFromArray = (
+  valueArray: string[],
   modifierType: string,
   postFix?: string
 ): string => {
-  return (typeof value === 'string' && value !== 'false') ?
-   ` ${modifierType}${value ? '-' + value : ''}${postFix ? '-' + postFix : ''}` : '';
+  if (valueArray) {
+    for (let i = 0, len = valueArray.length; i < len; i++) {
+      valueArray[i] = ` ${modifierType}-${valueArray[i]}${
+        postFix ? '-' + postFix : ''
+      }`;
+    }
+    return valueArray.join();
+  }
+  return '';
 };
 
 /**
  * Converts given input to Bulma class syntax. Use with Input() decorator.
  * @example
- * ``` Input() Bulma() color: string ```
- *  When it is used in html as ```color='primary'```, it will be converted to bulma class syntax ```is-primary```
+ * ``` Input() BulmaArray() colors: string | string[] ```
+ *  When it is used in html as ```color='primary' , color=['primary','secondary']```,
+ *  it will be converted to bulma class syntax ```is-primary or is-primary is-secondary```
  *  @remark
  *  If the value is a __boolean__ type, decorator will use property key rather than its value as __default__!\
  *  __BUT__ if you'll pass __useValue__ param as string, it will use that value !
- *
  */
 
-export function Bulma(
+export function BulmaArray(
   modifierType: string = 'is',
   useValue?: string,
   postFix?: string
@@ -49,9 +58,11 @@ export function Bulma(
       },
       set: function(value: any) {
         this[accessor].next(
-          (typeof value === 'boolean' && value) || (typeof value === 'string' && value === 'true')
-            ? convertToBulma(typeof useValue === 'string' ? useValue : key, modifierType, postFix)
-            : convertToBulma(value, modifierType, postFix)
+          isArray(value)
+            ? convertToBulmaFromArray(value, modifierType, postFix)
+            : ((typeof value === 'boolean' && value) || (typeof value === 'string' && value === 'true')
+                ? convertToBulma(typeof useValue === 'string' ? useValue : key, modifierType, postFix)
+                : convertToBulma(value, modifierType, postFix))
         );
       },
       enumerable: true,
@@ -59,4 +70,3 @@ export function Bulma(
     });
   };
 }
-
