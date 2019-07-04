@@ -5,8 +5,7 @@ export const convertToBulma = (
   modifierType: string,
   postFix?: string
 ): string => {
-  return (typeof value === 'string' && value !== 'false') ?
-   ` ${modifierType}${value ? '-' + value : ''}${postFix ? '-' + postFix : ''}` : '';
+  return ` ${modifierType}${value ? '-' + value : ''}${postFix ? '-' + postFix : ''}`;
 };
 
 /**
@@ -49,9 +48,11 @@ export function Bulma(
       },
       set: function(value: any) {
         this[accessor].next(
-          (typeof value === 'boolean' && value) || (typeof value === 'string' && value === 'true')
+          (typeof value === 'boolean' && value)
             ? convertToBulma(typeof useValue === 'string' ? useValue : key, modifierType, postFix)
-            : convertToBulma(value, modifierType, postFix)
+            : (typeof value !== 'boolean')
+              ? convertToBulma(value, modifierType, postFix)
+              : ''
         );
       },
       enumerable: true,

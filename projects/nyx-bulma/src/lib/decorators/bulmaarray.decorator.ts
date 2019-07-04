@@ -60,9 +60,11 @@ export function BulmaArray(
         this[accessor].next(
           isArray(value)
             ? convertToBulmaFromArray(value, modifierType, postFix)
-            : ((typeof value === 'boolean' && value) || (typeof value === 'string' && value === 'true')
+            : (typeof value === 'boolean' && value)
                 ? convertToBulma(typeof useValue === 'string' ? useValue : key, modifierType, postFix)
-                : convertToBulma(value, modifierType, postFix))
+                : (typeof value !== 'boolean')
+                  ? convertToBulma(value, modifierType, postFix)
+                  : ''
         );
       },
       enumerable: true,
