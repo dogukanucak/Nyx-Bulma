@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class NyxModalPopupComponent implements OnInit, OnDestroy {  
   private modalPopUpSubscription: Subscription;
-  protected isOpen = false;
+  public isOpen = false;
   
   @Output() onModalPopUpOpen = new EventEmitter<void>();
   @Output() onModalPopUpClose = new EventEmitter<void>();
