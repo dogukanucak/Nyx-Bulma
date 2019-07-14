@@ -4,7 +4,8 @@ import { Bulma } from '../../../decorators/bulma.decorator';
 
 /** 
 *  Nyx Notification Container Component
-*  Based on: {@link https://bulma.io/documentation/elements/notification/} 
+*  Based on Bulma Notification Element 
+*  {@link https://bulma.io/documentation/elements/notification/ }
 *  @example
 *  Usage:
 *  ```
@@ -39,7 +40,7 @@ export class NyxNotificationComponent extends BaseElement implements OnInit {
   }
 
   getClass(): string {
-    return this.bulmaClass || `${this.elementType}${this.type}`;
+    return (this.bulmaClass)? super.getClass() : `${this.elementType}${this.type}`;
   }
 
 }
