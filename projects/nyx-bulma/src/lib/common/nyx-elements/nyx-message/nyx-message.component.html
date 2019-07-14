@@ -1,0 +1,10 @@
+<article [class]="getClass()">
+  <!-- https://stackoverflow.com/questions/35107211/in-angular-2-how-to-check-whether-ng-content-is-empty -->
+  <div class="message-header">
+    <ng-content select="[header]"></ng-content>   
+  </div>
+  <div class="message-body">
+    <ng-content select="[body]"></ng-content>
+  </div>
+</article>
+
