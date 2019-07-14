@@ -1,0 +1,6 @@
+<li [ngClass]="isActive ? 'is-active' : ''">
+  <a (click)="onNavigationItemClick()">
+    <nyx-icon *ngIf="iconClass" [color]="iconColor" [iconClass]="iconClass" [size]="iconSize"></nyx-icon>
+    <span [innerText]="text"></span>
+  </a>
+</li>

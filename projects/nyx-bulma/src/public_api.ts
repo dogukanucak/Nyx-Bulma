@@ -7,6 +7,7 @@ export * from './lib/nyx-bulma.module';
 export * from './lib/common/nyx-elements/nyx-elements.module';
 export * from './lib/common/nyx-layout/nyx-layout.module';
 export * from './lib/common/nyx-components/nyx-modalpopup/nyx-modalpopup.module';
+export * from './lib/common/nyx-components/nyx-breadcrumb/nyx-breadcrumb.module';
 /*
  * Exported Components
  */

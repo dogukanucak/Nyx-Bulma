@@ -5,19 +5,22 @@ import { AppComponent } from './app.component';
 // Library Modules
 import { NyxElementsModule, NyxLayoutModule, NyxModalPopUpModule } from '../../../../projects/nyx-bulma/src/public_api';
 import { ElementsComponent } from './pages/elements/elements.component';
+import { NyxBreadCrumbModule } from 'projects/nyx-bulma/src/lib/common/nyx-components/nyx-breadcrumb/nyx-breadcrumb.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ElementsComponent,
+
     
   ],
   imports: [
     BrowserModule,    
     NyxElementsModule,   
     NyxLayoutModule,
-    NyxModalPopUpModule
+    NyxModalPopUpModule,
+    NyxBreadCrumbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
