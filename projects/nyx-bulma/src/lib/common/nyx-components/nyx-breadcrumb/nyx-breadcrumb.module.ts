@@ -6,7 +6,7 @@ import { NyxElementsModule } from '../../nyx-elements/nyx-elements.module';
 
 const NYX_COMPONENTS = [
   NyxBreadCrumbComponent,
-  NyxBreadCrumbItemComponent
+  NyxBreadCrumbItemComponent,
 ]
 
 @NgModule({

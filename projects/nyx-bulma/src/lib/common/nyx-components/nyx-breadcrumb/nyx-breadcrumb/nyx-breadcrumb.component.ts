@@ -2,6 +2,8 @@ import { Component, OnInit, Input, ViewChildren, QueryList, AfterViewInit } from
 
 import { NyxBreadCrumbItem, NyxBreadCrumbItemComponent } from '../nyx-breadcrumb-item/nyx-breadcrumb-item.component';
 import { Bulma } from '../../../../decorators/bulma.decorator';
+import { BaseElement } from '../../../abstracts/nyx-base-element';
+
 
 
 /**
@@ -12,21 +14,24 @@ import { Bulma } from '../../../../decorators/bulma.decorator';
 @Component({
   selector: 'nyx-breadcrumb',
   templateUrl: './nyx-breadcrumb.component.html',
-  styleUrls: ['./nyx-breadcrumb.component.scss']
+  styleUrls: ['./nyx-breadcrumb.component.scss'],  
 })
-export class NyxBreadCrumbComponent implements OnInit, AfterViewInit {
+export class NyxBreadCrumbComponent extends BaseElement implements OnInit, AfterViewInit {
   private readonly EMPTY_ITEM_ERROR_MESSAGE = "No BreadCrumb Item Has Been Specified!";
+  protected elementType = "breadcrumb";
   /* Bulma style inputs */
   @Input() @Bulma() alignment: 'centered' | 'right';
   @Input() @Bulma() size: 'small' | 'medium' | 'large';
-  @Input() @Bulma("","has") separator: 'arrow-separator' | 'bullet-separator' | 'dot-separator' | 'succeeds-separator';
+  @Input() @Bulma("has") separator: 'arrow-separator' | 'bullet-separator' | 'dot-separator' | 'succeeds-separator';
   
   /* BreadCrumbItems */
   @Input() breadCrumbItems: NyxBreadCrumbItem[]; 
   
   /* View Referance Of Items */
   @ViewChildren(NyxBreadCrumbItemComponent) items: QueryList<NyxBreadCrumbItemComponent>;
-  constructor() { }
+  constructor() {
+    super();
+   }
 
   ngOnInit() {
     // if(this.breadCrumbItems.length == 0) {
@@ -34,9 +39,19 @@ export class NyxBreadCrumbComponent implements OnInit, AfterViewInit {
     // }
     
   }
+  
   ngAfterViewInit() {
-    console.log("Items => ", this.items);
-    console.log("First Item => ", this.items.first.text);
+    
+  }
+
+  getClass() {
+    /* If Bulma class has been given use ONLY that class */
+    if (this.bulmaClass) {
+      return super.getClass();
+    } else {
+      /* Concatenate style properties */     
+     return `${this.elementType}${this.alignment}${this.size}${this.separator}`;
+    }
   }
 
 }

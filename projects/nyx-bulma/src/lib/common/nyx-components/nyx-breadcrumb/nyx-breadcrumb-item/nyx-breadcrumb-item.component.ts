@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, HostBinding } from '@angular/core';
 
 export interface NyxBreadCrumbItem {
   icon: {
@@ -12,7 +12,7 @@ export interface NyxBreadCrumbItem {
 @Component({
   selector: 'nyx-breadcrumb-item',
   templateUrl: './nyx-breadcrumb-item.component.html',
-  styleUrls: ['./nyx-breadcrumb-item.component.scss']
+  styleUrls: ['./nyx-breadcrumb-item.component.scss'],
 })
 export class NyxBreadCrumbItemComponent implements OnInit {
   public isActive: boolean;
@@ -27,6 +27,7 @@ export class NyxBreadCrumbItemComponent implements OnInit {
   /* Item click */
   @Output() onClick = new EventEmitter<any>();
 
+  
   constructor() { }
 
   ngOnInit() {
