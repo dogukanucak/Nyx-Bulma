@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { BaseElement } from '../nyx-base-element';
+import { BaseElement } from '../../abstracts/nyx-base-element';
 import { Bulma } from '../../../decorators/bulma.decorator';
 
 /** 

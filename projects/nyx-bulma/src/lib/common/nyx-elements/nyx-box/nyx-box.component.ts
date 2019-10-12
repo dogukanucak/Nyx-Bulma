@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { BaseElement } from '../nyx-base-element';
+import { BaseElement } from '../../abstracts/nyx-base-element';
 
 /**
 * Simple box container based on Bulma Box Element: {@link https://bulma.io/documentation/elements/box/}
